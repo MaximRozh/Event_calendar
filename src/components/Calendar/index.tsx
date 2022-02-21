@@ -14,6 +14,7 @@ const EventCalendar: FC<EventCalendarProps> = ({ events }) => {
     const currentDayEvents = events.filter(
       (event) => event.date === formatedDate
     );
+    console.log(currentDayEvents)
     return (
       <ul className="events">
         {currentDayEvents.map((event, index) => (

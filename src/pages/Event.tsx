@@ -16,7 +16,8 @@ const Event: FC = () => {
   useEffect(() => {
     fetchGuests();
     fetchEvents(user.username);
-  }, []);
+  }, []); // eslint-disable-next-line
+
   const submit = (event: IEvent) => {
     setVodalVisible(false);
     createEvent(event);

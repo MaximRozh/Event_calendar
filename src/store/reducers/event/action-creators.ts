@@ -37,7 +37,7 @@ export const EventActionCreators = {
       const events = localStorage.getItem("events") || "[]";
       const json = JSON.parse(events) as IEvent[];
       const currentUserEvent = json.filter(
-        (event) => username === event.author || event.guest
+        (event) => event.author === username || event.guest === username
       );
       dispatch(EventActionCreators.setEvents(currentUserEvent));
     } catch (e) {

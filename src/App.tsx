@@ -15,7 +15,7 @@ const App: FC = () => {
       setIsAuth(true);
     } else {
     }
-  }, []);
+  }, []); // eslint-disable-next-line
 
   return (
     <Layout>
