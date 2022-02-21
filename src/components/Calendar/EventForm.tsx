@@ -52,7 +52,7 @@ const EventForm: FC<EventFromProps> = ({ guests, submit }) => {
         name="date"
         rules={[rules.isDayAfter("can't select day before current date")]}
       >
-        <DatePicker onChange={selectDate} />
+        <DatePicker allowClear={false} onChange={selectDate} />
       </Form.Item>
       <Form.Item label="Select guests" name="guests" rules={[rules.required()]}>
         <Select style={{ width: 120 }} onChange={onChangeSelect}>

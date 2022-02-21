@@ -1,4 +1,3 @@
-import axios from "axios";
 import { AppDispatch } from "../..";
 import UserService from "../../../api/UserService";
 import { IUser } from "../../../models/UserModel";
@@ -15,7 +14,7 @@ export const AuthActionCreator = {
     type: AuthActionEnum.SET_USER,
     payload: user,
   }),
-  serIsAuth: (auth: boolean): SetAuthAction => ({
+  setIsAuth: (auth: boolean): SetAuthAction => ({
     type: AuthActionEnum.SET_AUTH,
     payload: auth,
   }),
@@ -41,7 +40,7 @@ export const AuthActionCreator = {
             localStorage.setItem("auth", "true");
             localStorage.setItem("username", mockUser.username);
             dispatch(AuthActionCreator.setUser(mockUser));
-            dispatch(AuthActionCreator.serIsAuth(true));
+            dispatch(AuthActionCreator.setIsAuth(true));
           } else {
             dispatch(AuthActionCreator.serError("Check user name or password"));
           }
@@ -55,6 +54,6 @@ export const AuthActionCreator = {
     localStorage.removeItem("auth");
     localStorage.removeItem("username");
     dispatch(AuthActionCreator.setUser({} as IUser));
-    dispatch(AuthActionCreator.serIsAuth(false));
+    dispatch(AuthActionCreator.setIsAuth(false));
   },
 };

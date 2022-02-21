@@ -21,13 +21,13 @@ const Event: FC = () => {
     setVodalVisible(false);
     createEvent(event);
   };
-  console.log(events);
+
   return (
     <div>
-      <EventCalendar events={events} />
       <Row justify="center">
-        <Button onClick={() => setVodalVisible(true)}>Add Event</Button>
+        <Button type="primary" style={{margin: 15, width: 170}} onClick={() => setVodalVisible(true)}>ADD EVENT</Button>
       </Row>
+      <EventCalendar events={events} />
       <Modal
         title="Add event"
         visible={modalVisible}

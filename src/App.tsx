@@ -7,12 +7,12 @@ import { useAction } from "./hooks/useActions";
 import { IUser } from "./models/UserModel";
 
 const App: FC = () => {
-  const { setUser, serIsAuth } = useAction();
+  const { setUser, setIsAuth } = useAction();
 
   useEffect(() => {
     if (localStorage.getItem("auth")) {
       setUser({ username: localStorage.getItem("username" || "") } as IUser);
-      serIsAuth(true);
+      setIsAuth(true);
     } else {
     }
   }, []);

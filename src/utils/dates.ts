@@ -1,5 +1,3 @@
-import { Moment } from "moment";
-
 export const formatDate = (date: Date): string => {
   const year = date.getFullYear();
   const month =
