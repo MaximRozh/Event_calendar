@@ -18,11 +18,13 @@ const LoginForm: FC = () => {
       <Form.Item
         label="User name"
         name="username"
+        initialValue="admin"
         rules={[rules.required("Please input your username!")]}
       >
         <Input />
       </Form.Item>
       <Form.Item
+        initialValue="123"
         label="User password"
         name="password"
         rules={[rules.required("Please input your password!")]}
